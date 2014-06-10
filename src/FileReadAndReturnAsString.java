@@ -25,9 +25,7 @@ public class FileReadAndReturnAsString {
 
         StringBuilder stringBuilder = new StringBuilder();
         try {
-            FileInputStream fileInputStream = new FileInputStream(file);
-            DataInputStream dataInputStream = new DataInputStream(fileInputStream);
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(dataInputStream));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 stringBuilder.append(line);
