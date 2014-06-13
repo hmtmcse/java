@@ -59,3 +59,41 @@ a|b     :   Matches either a or b.
 \W      :   Matches nonword characters.
 \z      :   End of entire string
 \Z      :   End of entire string except allowable final line terminator.
+
+
+
+
+
+************************************************************************************************************************
+*                                                 Methods with Description                                             *
+************************************************************************************************************************
+
+------------------------------------------------------------------------------------------------------------------------
+public int start()              :   Returns the start index of the previous match.
+public int start(int group)     :   Returns the start index of the subsequence captured by the given group during the previous match operation.
+public int end()                :   Returns the offset after the last character matched.
+public int end(int group)       :   Returns the offset after the last character of the subsequence captured by the given group during the previous match operation.
+------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------
+public boolean lookingAt()      :   Attempts to match the input sequence, starting at the beginning of the region, against the pattern.
+public boolean find()           :   Attempts to find the next subsequence of the input sequence that matches the pattern.
+public boolean find(int start)  :   Resets this matcher and then attempts to find the next subsequence of the input sequence that matches the pattern, starting at the specified index.
+public boolean matches()        :   Attempts to match the entire region against the pattern.
+------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------
+public Matcher appendReplacement(StringBuffer sb, String replacement)   :   Implements a non-terminal append-and-replace step.
+public StringBuffer appendTail(StringBuffer sb)                         :   Implements a terminal append-and-replace step.
+public String replaceAll(String replacement)                            :   Replaces every subsequence of the input sequence that matches the pattern with the given replacement string.
+public String replaceFirst(String replacement)                          :   Replaces the first subsequence of the input sequence that matches the pattern with the given replacement string.
+public static String quoteReplacement(String s)                         :   Returns a literal replacement String for the specified String. This method produces a String that will work as a literal replacement s in the appendReplacement method of the Matcher class.
+------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------
+public String getDescription()  :   Retrieves the description of the error.
+public int getIndex()           :   Retrieves the error index.
+public String getPattern()      :   Retrieves the erroneous regular expression pattern.
+public String getMessage()      :   Returns a multi-line string containing the description of the syntax error and its index, the erroneous regular expression pattern, and a visual indication of the error index within the pattern.
+------------------------------------------------------------------------------------------------------------------------
+
