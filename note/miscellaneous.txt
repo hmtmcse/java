@@ -1,0 +1,24 @@
+************************************************************************************************************************
+*                                                Name of Special Characters                                            *
+************************************************************************************************************************
+^        :  caret
+$        :  dollar
+@        :  at
+!        :  bang
+%        :  percent
+&        :  amper
+*        :  asterisk
+-        :  minus/dash
+_        :  underscore
+|        :  pipe
+\        :  back slash
+/        :  forward slash
+>        :  greater
+<        :  less/waka
+~        :  tilde
+`        :  grave/backtick
+'        :  apostrophe
+?        :  question mark
+.        :  dot
+,        :  comma
+#        :  hash
