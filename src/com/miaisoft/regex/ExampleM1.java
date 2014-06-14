@@ -25,12 +25,12 @@ public class ExampleM1 {
         return content.matches(pattern);
     }
 
-    /** Checking in a String All are Number or not */
+    /** Checking in a String All are Number then space then alphabet */
     public boolean isAllNumberSpaceCharacter(String content){
     /** Here Content Must Started with Numeric (one or more) Then 1 space and
-      *  then a to z or A to Z (0 or more) Alphabet
+      *  then a to z or A to Z (1 or more) Alphabet
      */
-        String pattern = "^[0-9]+\\s[a-zA-z]*";
+        String pattern = "^[0-9]+\\s[a-zA-z]+";
         return content.matches(pattern);
     }
 
