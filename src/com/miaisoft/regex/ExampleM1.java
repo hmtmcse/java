@@ -14,14 +14,14 @@ public class ExampleM1 {
 
     /** Checking in a String All are Character or not */
     public boolean isAllCharacter(String content){
-        String pattern = "[a-zA-Z\\s]+";
+        String pattern = "[a-zA-Z]+";
         return content.matches(pattern);
     }
 
 
     /** Checking in a String All are Number or not */
     public boolean isAllNumber(String content){
-        String pattern = "[0-9\\s]+";
+        String pattern = "[0-9]+";
         return content.matches(pattern);
     }
 
