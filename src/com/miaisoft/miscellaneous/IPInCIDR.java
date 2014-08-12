@@ -59,19 +59,20 @@ public class IPInCIDR {
             if (splitedmask[i].equals("0")) {
                 network = IPInCIDR.addDot(network, "0");
                 gateWay = IPInCIDR.addDot(gateWay, i == 3 ?"1":"0");
-                broadcast = IPInCIDR.addDot(broadcast, "0");
+                BigInteger mskbit = new BigInteger(Integer.toBinaryString(Integer.parseInt(splitedmask[i])), 2);
+                broadcast = IPInCIDR.addDot(broadcast, i == 3 ? "" + (1 + Integer.parseInt(mskbit.xor(new BigInteger("11111111", 2)).toString())):"0");
             } else if (!splitedmask[i].equals("255")) {
                 BigInteger mskbit = new BigInteger(Integer.toBinaryString(Integer.parseInt(splitedmask[i])), 2);
                 BigInteger ipbit = new BigInteger(Integer.toBinaryString(Integer.parseInt(splitedIP[i])), 2);
                 BigInteger lastBit = new BigInteger("1");
                 network = IPInCIDR.addDot(network, mskbit.and(ipbit).toString());
                 gateWay = IPInCIDR.addDot(gateWay, i == 3 ? mskbit.and(ipbit).add(lastBit).toString() : mskbit.and(ipbit).toString());
-                broadcast = IPInCIDR.addDot(broadcast, ipbit.not().toString());
-                System.out.println(mskbit.xor(new BigInteger("11111111", 2)).toString());
+                broadcast = IPInCIDR.addDot(broadcast,i == 3 ? mskbit.and(ipbit).add(mskbit.xor(new BigInteger("11111111", 2))).toString():mskbit.and(ipbit).toString());
             } else {
                 network = IPInCIDR.addDot(network, splitedIP[i]);
                 gateWay = IPInCIDR.addDot(gateWay, i == 3 ? "" + (Integer.parseInt(splitedIP[i]) + 1) :splitedIP[i]);
-                broadcast = IPInCIDR.addDot(broadcast, splitedIP[i]);
+                BigInteger mskbit = new BigInteger(Integer.toBinaryString(Integer.parseInt(splitedmask[i])), 2);
+                broadcast = IPInCIDR.addDot(broadcast, i == 3 ? "" + (Integer.parseInt(splitedIP[i]) + Integer.parseInt(mskbit.xor(new BigInteger("11111111", 2)).toString())):splitedIP[i]);
             }
 
         }
@@ -81,7 +82,7 @@ public class IPInCIDR {
 
     public static void main(String[] args) {
         IPInCIDR ipInCIDR = new IPInCIDR();
-        ipInCIDR.getIPDetails("10.0.30.32".toString(), ipInCIDR.calculateSubnetmask(27).toString());
+        ipInCIDR.getIPDetails("10.0.30.32".toString(), ipInCIDR.calculateSubnetmask(22).toString());
         System.out.println(network);
         System.out.println(gateWay);
         System.out.println(netmask);
