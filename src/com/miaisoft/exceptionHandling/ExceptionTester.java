@@ -5,8 +5,10 @@ package com.miaisoft.exceptionHandling;
  */
 public class ExceptionTester {
 
+    public static ExceptionTester exceptionTester;
+
     public static void main(String[] args) {
-        ExceptionTester exceptionTester = new ExceptionTester();
+        exceptionTester = new ExceptionTester();
         try {
             System.out.println(exceptionTester.doException(1));
         }catch (CustomException ce){
