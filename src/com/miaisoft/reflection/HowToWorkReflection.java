@@ -103,7 +103,7 @@ public class HowToWorkReflection {
      * 1. Get class from String
      * 2. Then get instance from that class
      * 3. Collect declared method from class
-     * 4. Method invoke by object and with his paramerte
+     * 4. Method invoke by object and with his parameter
      */
 
     public void methodInvoke() {
@@ -149,7 +149,6 @@ public class HowToWorkReflection {
 
             Method method = aClass.getDeclaredMethod("doException",params);
             method.invoke(object,1);
-
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (InstantiationException e) {
