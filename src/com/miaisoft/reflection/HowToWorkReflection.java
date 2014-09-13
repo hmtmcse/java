@@ -1,5 +1,7 @@
 package com.miaisoft.reflection;
 
+import sun.security.jca.GetInstance;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -12,7 +14,7 @@ public class HowToWorkReflection {
 
     public static void main(String[] args) {
         HowToWorkReflection howToWorkReflection = new HowToWorkReflection();
-        howToWorkReflection.methodInvoke();
+        howToWorkReflection.methodInvokeWhitException();
 
     }
 
@@ -136,6 +138,29 @@ public class HowToWorkReflection {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void methodInvokeWhitException() {
+        try {
+            Class aClass = Class.forName("com.miaisoft.exceptionHandling.ExceptionTester");
+            Object object = aClass.newInstance();
+            Class[] params = new Class[]{Integer.TYPE};
+
+            Method method = aClass.getDeclaredMethod("doException",params);
+            method.invoke(object,1);
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            // Here Printing The Exception Message.
+            System.out.println(e.getCause().getMessage());
         }
     }
 
