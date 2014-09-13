@@ -15,7 +15,6 @@ public class HowToWorkReflection {
     public static void main(String[] args) {
         HowToWorkReflection howToWorkReflection = new HowToWorkReflection();
         howToWorkReflection.methodInvokeWhitException();
-
     }
 
     /**
