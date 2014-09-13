@@ -82,7 +82,7 @@ public class IPInCIDR {
 
     public static void main(String[] args) {
         IPInCIDR ipInCIDR = new IPInCIDR();
-        ipInCIDR.getIPDetails("10.0.30.32".toString(), ipInCIDR.calculateSubnetmask(22).toString());
+        ipInCIDR.getIPDetails("182.48.73.225".toString(), ipInCIDR.calculateSubnetmask(27).toString());
         System.out.println(network);
         System.out.println(gateWay);
         System.out.println(netmask);

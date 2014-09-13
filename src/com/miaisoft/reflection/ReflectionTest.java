@@ -22,6 +22,9 @@ public class ReflectionTest {
     public int addition(int a, int b){
         return a + b;
     }
+    public int intOneParams(int a){
+        return a + 10;
+    }
 
 
     public int subtraction(int a, int b){
@@ -30,6 +33,9 @@ public class ReflectionTest {
 
     public void helloWorld(){
         System.out.println("Welcome to HMTM World!");
+    }
+    public void methodWithString(String name){
+        System.out.println("Welcome to " + name + " World!");
     }
 
     public void exceptionTest(){

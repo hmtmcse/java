@@ -2,6 +2,7 @@ package com.miaisoft.reflection;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
@@ -11,7 +12,7 @@ public class HowToWorkReflection {
 
     public static void main(String[] args) {
         HowToWorkReflection howToWorkReflection = new HowToWorkReflection();
-        howToWorkReflection.getClassFromString();
+        howToWorkReflection.methodInvoke();
 
     }
 
@@ -96,16 +97,44 @@ public class HowToWorkReflection {
      * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
      * Experiment With Method
      * <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+     * How to invoke method by reflection?
+     * 1. Get class from String
+     * 2. Then get instance from that class
+     * 3. Collect declared method from class
+     * 4. Method invoke by object and with his paramerte
      */
 
     public void methodInvoke() {
         try {
             Class aClass = Class.forName("com.miaisoft.reflection.ReflectionTest");
+            Object object = aClass.newInstance();
+
+            // No parameter Method.
+            Method method = aClass.getDeclaredMethod("helloWorld", null);
+            method.invoke(object, null);
+
+            //Call Method with Single String parameter
+            method = aClass.getDeclaredMethod("methodWithString", String.class);
+            method.invoke(object, "MIA");
+
+            //Call Method with Multiple integer parameter
+            Class[] paramInt = new Class[2];
+            paramInt[0] = Integer.TYPE;
+            paramInt[1] = Integer.TYPE;
+            Object[] paramsObject = {1, 1};
+            method = aClass.getDeclaredMethod("addition", paramInt);
+            System.out.println(method.invoke(object, paramsObject));
 
 
-
-            System.out.println("Class Name = " + aClass.getSimpleName());
         } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
     }
