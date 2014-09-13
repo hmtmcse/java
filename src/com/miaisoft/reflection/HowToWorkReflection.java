@@ -1,7 +1,5 @@
 package com.miaisoft.reflection;
 
-import sun.security.jca.GetInstance;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
