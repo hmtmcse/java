@@ -15,9 +15,9 @@ public class BasicAuthRequest {
 
     public static void main(String[] args) {
 
-        String _url = "http://10.0.40.137:8221/GrailsForBeginner/restTest/authTesting";
+        String _url = "http://localhost:8221/GrailsForBeginner/apiAuthTest/index";
 
-        String userPass = "touhid" + ":" + "touhid";
+        String userPass = "touhiddadfasf" + ":" + "touhid1";
         String encoded = Base64.encode(userPass.getBytes());
         try {
             URL url = new URL(_url);
