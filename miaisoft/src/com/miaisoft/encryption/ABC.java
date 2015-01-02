@@ -17,7 +17,7 @@ public class ABC {
     static  int PIC_VALUE_4 = 21;
 
     public static void main(String[] args) {
-        for (int i =0; i < 15; i++){
+        for (int i =0; i < 65; i++){
             keyEncrypt("jdue8q4x1");
         }
 
@@ -25,23 +25,23 @@ public class ABC {
 
     public static void keyEncrypt(String prefix){
         String uuid = UUID.randomUUID().toString();
-        String hash = "";
-        String profixUUID = prefix + "-" + uuid;
+
+        String profixUUID = prefix + "-" + uuid + "-8080";
         uuid = profixUUID;
         int number1 = (int) uuid.charAt(PIC_VALUE_1);
         int number2 = (int) uuid.charAt(PIC_VALUE_2);
 
 
-        System.out.println("=================================");
-        System.out.println(uuid.charAt(PIC_VALUE_1));
-        System.out.println(uuid.charAt(PIC_VALUE_2));
+//        System.out.println("=================================");
+//        System.out.println(uuid.charAt(PIC_VALUE_1));
+//        System.out.println(uuid.charAt(PIC_VALUE_2));
 
         int number3 = (int) uuid.charAt(PIC_VALUE_3);
         int number4 = (int) uuid.charAt(PIC_VALUE_4);
 
-        System.out.println(uuid.charAt(PIC_VALUE_3));
-        System.out.println(uuid.charAt(PIC_VALUE_4));
-        System.out.println("=================================");
+//        System.out.println(uuid.charAt(PIC_VALUE_3));
+//        System.out.println(uuid.charAt(PIC_VALUE_4));
+//        System.out.println("=================================");
 
         int subtraction = 0;
         if (number1 < number2){
@@ -64,6 +64,10 @@ public class ABC {
             code = subtraction - subtraction2;
         }
 
+        String hash = "";
+
+        StringBuilder stringBuilder = new StringBuilder();
+
         int ascii = 0,sub=0;
         for (int i=0; i< profixUUID.length(); i++){
             if (i != PIC_VALUE_1 && i != PIC_VALUE_2 && i != PIC_VALUE_3 && i != PIC_VALUE_4 ){
@@ -73,15 +77,21 @@ public class ABC {
                 }else if (code < ascii){
                     sub = ascii - code;
                 }
+                stringBuilder.append((char)sub);
                 hash += "" + (char) sub;
             }else{
+                stringBuilder.append(profixUUID.charAt(i));
                 hash += "" + profixUUID.charAt(i);
             }
 
         }
-        System.out.println( "This is Encrypt Code = " + code + " Hash = " + hash);
+//        System.out.println( "This is Encrypt Code = " + code + " Hash = " + hash);
         hash =  Base64.encode(hash.getBytes());
-        keyDecrypt(hash);
+        String x =  Base64.encode(String.valueOf(stringBuilder).getBytes());
+        System.out.println( hash);
+        System.out.println( x );
+
+//        keyDecrypt(hash);
         System.out.println( hash + "  "  + profixUUID);
     }
 
@@ -91,13 +101,13 @@ public class ABC {
             String hash = new String(Base64.decode(hashCode));
 
 
-            System.out.println("=================================");
-            System.out.println(hash.charAt(PIC_VALUE_1));
-            System.out.println(hash.charAt(PIC_VALUE_2));
-
-            System.out.println(hash.charAt(PIC_VALUE_3));
-            System.out.println(hash.charAt(PIC_VALUE_4));
-            System.out.println("=================================");
+//            System.out.println("=================================");
+//            System.out.println(hash.charAt(PIC_VALUE_1));
+//            System.out.println(hash.charAt(PIC_VALUE_2));
+//
+//            System.out.println(hash.charAt(PIC_VALUE_3));
+//            System.out.println(hash.charAt(PIC_VALUE_4));
+//            System.out.println("=================================");
 
             int number1 = (int) hash.charAt(PIC_VALUE_1);
             int number2 = (int) hash.charAt(PIC_VALUE_2);
