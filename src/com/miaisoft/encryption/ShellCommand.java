@@ -10,39 +10,46 @@ import java.io.InputStreamReader;
 public class ShellCommand {
 
     public static void main(String[] args) {
-        run("ll");
+        runSingle("ll");
+    }
+
+    public static void runSingle(String command){
+
+    }
+
+    public static void runBatch(String[] command){
+
     }
 
 
-    public static void run(String command) {
-        String s = null;
-
+    public static void run(String single, String[] batch) {
         try {
-            Process p = Runtime.getRuntime().exec("ps -ef");
-
-            BufferedReader stdInput = new BufferedReader(new
-                    InputStreamReader(p.getInputStream()));
-
-            BufferedReader stdError = new BufferedReader(new
-                    InputStreamReader(p.getErrorStream()));
-
-            // read the output from the command
-            System.out.println("Here is the standard output of the command:\n");
-            while ((s = stdInput.readLine()) != null) {
-                System.out.println(s);
+            Process process;
+            if (single != null){
+                process = Runtime.getRuntime().exec(single);
+            }else if (batch.length > 0){
+                process = Runtime.getRuntime().exec(batch);
+            }else{
+                return;
             }
 
-            // read any errors from the attempted command
-            System.out.println("Here is the standard error of the command (if any):\n");
-            while ((s = stdError.readLine()) != null) {
-                System.out.println(s);
+            BufferedReader consoleOutput;
+
+            if (process.getErrorStream() != null){
+                consoleOutput = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+            }else if (process.getInputStream() != null){
+                consoleOutput = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            }else{
+                return;
             }
 
-            System.exit(0);
+            String outputString = null;
+            while ((outputString = consoleOutput.readLine()) != null) {
+                System.out.println(outputString);
+            }
         } catch (IOException e) {
             System.out.println("exception happened - here's what I know: ");
             e.printStackTrace();
-            System.exit(-1);
         }
     }
 }
