@@ -9,22 +9,22 @@ import java.io.InputStreamReader;
  */
 public class ShellCommand {
 
-    public static void main(String[] args) {
-        runSingle("ll");
+    private Process process;
+
+    public void runSingle(String command){
+        run(command, null);
     }
 
-    public static void runSingle(String command){
-
+    public void runBatch(String[] command){
+        run(null, command);
     }
 
-    public static void runBatch(String[] command){
-
+    public void stop(){
+       process.destroy();
     }
 
-
-    public static void run(String single, String[] batch) {
+    public void run(String single, String[] batch) {
         try {
-            Process process;
             if (single != null){
                 process = Runtime.getRuntime().exec(single);
             }else if (batch.length > 0){
