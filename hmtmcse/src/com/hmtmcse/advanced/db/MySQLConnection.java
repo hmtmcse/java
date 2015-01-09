@@ -9,10 +9,10 @@ import java.sql.Statement;
  * Created by Touhid Mia on 8/01/2015.
  */
 public class MySQLConnection {
-    public static String JDBC_DRIVER_PACKAGE = "com.mysql.jdbc.Driver";
-    public static String SERVER_URL = "jdbc:mysql://localhost/";
-    public static String SERVER_USER = "root";
-    public static String SERVER_PASSWORD = "";
+    private String JDBC_DRIVER_PACKAGE = "com.mysql.jdbc.Driver";
+    private String SERVER_URL = "jdbc:mysql://localhost/";
+    private String SERVER_USER = "root";
+    private String SERVER_PASSWORD = "";
 
     Connection connection = null;
     Statement statement = null;
