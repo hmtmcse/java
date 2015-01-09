@@ -5,13 +5,13 @@ import java.sql.SQLException;
 /**
  * Created by Touhid Mia on 8/01/2015.
  */
-public class MySQLDBOperation extends MySQLConnection {
+public class MySQLDatabase extends MySQLConnection {
 
-    public MySQLDBOperation() throws SQLException, ClassNotFoundException {
+    public MySQLDatabase() throws SQLException, ClassNotFoundException {
         super();
     }
 
-    public void createDB(String dbname) {
+    public void create(String dbname) {
         String sql = "CREATE DATABASE " + dbname + " default character set utf8 default collate utf8_general_ci";
         try {
             int res = statement.executeUpdate(sql);
@@ -22,17 +22,14 @@ public class MySQLDBOperation extends MySQLConnection {
         }
     }
 
-    public void createTable() {
-
-    }
-
-    public void closeConnection() throws SQLException {
-        if (statement != null) {
-            statement.close();
-        }
-        if (connection != null) {
-            connection.close();
+    public void drop(String dbname) {
+        String sql = "DROP DATABASE " + dbname ;
+        try {
+            int res = statement.executeUpdate(sql);
+            System.out.println("Statement = " + res);
+            closeConnection();
+        } catch (SQLException e) {
+            System.out.println("Error Form dropDB = " + e.getMessage());
         }
     }
-
 }
