@@ -21,7 +21,7 @@ public class App
 		
 		Content c = new Content();
 		
-		c.addRegId("APA91bGNYv-DyWleeJv3Y4K1Gm2Q_yLdq3A2HeCzZDg9npXuc483IUJBiVvJrV7T14AUOIIGcjdHnZ1HbQiqAT0r7F5CgMsXXciX6DYUSkIWI07RbWGXrShb5F5xyvgai2jN3CzzSrqv1mhj5gOiD30AZkYZCHiJf6RFibxKzAb3225tfRZvCXE");
+		c.addRegId("APA91bFom2RYnl4BGHW5fQjFXPztKezr6F70iyRdFJ6ebMEuP4K6jHTp1U_kOlOwzJRJGt_cEsfTeN0GiijeE3pQSRJ6pjIwcX30lli3Vaqjga0kaoY3pK_1kVmBgX84O3GG893zSMq3h-LYyYKtwwQxEALjYwD-wg");
 		c.createData("Test Title", "Test Message");
 		
 		return c;

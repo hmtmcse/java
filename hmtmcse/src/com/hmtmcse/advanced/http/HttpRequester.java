@@ -137,6 +137,8 @@ public class HttpRequester {
                 throw new HttpExceptionHandler("Gateway Timeout!");
             case 405:
                 throw new HttpExceptionHandler("Method Not Allowed!");
+            case 403:
+                throw new HttpExceptionHandler("Access Forbidden!");
             default:
                 throw new HttpExceptionHandler("Unknown HTTP Error!");
         }
