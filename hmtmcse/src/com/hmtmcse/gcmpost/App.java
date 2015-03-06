@@ -18,11 +18,9 @@ public class App
     }
     
     public static Content createContent(){
-		
 		Content c = new Content();
-		
 		c.addRegId("APA91bGkk7eTbDOzOHY6KCrAMwr-eHq9FiBJxYuiSiELdEROZaJgJ-fixO4Ml3AFqLwxNxhoxL_TbBjxuKu8G16xK1YzHvjYCl7U_QfA3hJinSeGaqUSZ8uEeyEg7AkbxS4WvBHjgWESAWdRYH0Gu5GUm7XZiWPvdw");
-		c.createData("Test Title", "Test Message");
+		c.createData("BUBT", "Bijoy ujjoll Rokon");
 		
 		return c;
 	}
