@@ -81,6 +81,11 @@ public class DateTesting {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        
+        
+        // Time in MiliSecond
+        System.out.println(new Date().getTime());
+        
 
 
 
