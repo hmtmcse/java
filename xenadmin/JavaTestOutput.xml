@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<results>
+  <group>
+    <name>Java</name>
+    <test>
+        <name>EventMonitor</name>
+        <state>Pass</state>
+    </test>
+    <test>
+        <name>AddNetwork</name>
+        <state>Pass</state>
+    </test>
+    <test>
+        <name>CreateVM</name>
+        <state>Fail</state>
+    </test>
+    <test>
+        <name>DeprecatedMethod</name>
+        <state>Pass</state>
+    </test>
+    <test>
+        <name>GetAllRecordsOfAllTypes</name>
+        <state>Pass</state>
+    </test>
+    <test>
+        <name>SharedStorage</name>
+        <state>Skip</state>
+    </test>
+    <test>
+        <name>StartAllVMs</name>
+        <state>Pass</state>
+    </test>
+  </group>
+</results>

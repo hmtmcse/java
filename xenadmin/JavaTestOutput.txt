@@ -1,0 +1,85 @@
+logging in to '13.0.40.150' as 'root' with password 'hmtmcse'...
+Success
+Session API version is 2.3
+We'll try to start all the available VMs. Since most of them will be templates
+This should cause a fair number of exceptions
+----------------------------------------------------------------------
+Getting all VM records----------------------------------------------------------------------
+got: 73 records
+----------------------------------------------------------------------
+Start all the available VMs----------------------------------------------------------------------
+Trying to start: SUSE Linux Enterprise Server 11 SP1 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: SUSE Linux Enterprise Server 10 SP4 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Debian Squeeze 6.0 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Windows Server 2008 R2 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Windows Server 2008 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Red Hat Enterprise Linux 4.5 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Red Hat Enterprise Linux 4.6 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: SUSE Linux Enterprise Server 11 SP3 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: CentOS 5 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Debian Wheezy 7.0 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: SUSE Linux Enterprise Server 10 SP2 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Debian Squeeze 6.0 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Ubuntu Lucid Lynx 10.04 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: SUSE Linux Enterprise Server 11 SP2 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Oracle Enterprise Linux 6 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: CentOS 4.8 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: SUSE Linux Enterprise Server 10 SP1 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: SUSE Linux Enterprise Server 11 SP3 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Red Hat Enterprise Linux 5 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Ubuntu Precise Pangolin 12.04 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: CentOS 6 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Citrix XenApp on Windows Server 2003 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: SUSE Linux Enterprise Server 10 SP1 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Control domain on host: mis-xen -- expected failure: bad power state (actual: running expected: halted)
+Trying to start: Windows Server 2008 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Windows Vista (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Windows Server 2003 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: CentOS 4.6 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Citrix XenApp on Windows Server 2008 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Red Hat Enterprise Linux 5 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: cent1.miaisoft.com -- predictable failure: insufficient host capacity to start the VM
+Trying to start: Red Hat Enterprise Linux 4.8 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Ubuntu Trusty Tahr 14.04(template)  -- expected failure: can't start a template.
+Trying to start: Red Hat Enterprise Linux 6 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: CentOS 7(template)  -- expected failure: can't start a template.
+Trying to start: CentOS 5 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Windows Server 2012 R2 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Citrix XenApp on Windows Server 2008 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Ubuntu Maverick Meerkat 10.10 (64-bit) (experimental)(template)  -- expected failure: can't start a template.
+Trying to start: SUSE Linux Enterprise Server 12 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: SUSE Linux Enterprise Server 10 SP3 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Xen API SDK(template)  -- expected failure: can't start a template.
+Trying to start: CentOS 6 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Citrix XenApp on Windows Server 2003 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: SUSE Linux Enterprise Server 11 SP2 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Red Hat Enterprise Linux 6 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Red Hat Enterprise Linux 7(template)  -- expected failure: can't start a template.
+Trying to start: Ubuntu Maverick Meerkat 10.10 (32-bit) (experimental)(template)  -- expected failure: can't start a template.
+Trying to start: Other install media(template)  -- expected failure: can't start a template.
+Trying to start: CentOS 4.5 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Oracle Linux 7(template)  -- expected failure: can't start a template.
+Trying to start: SUSE Linux Enterprise Server 10 SP4 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Windows 8 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: SUSE Linux Enterprise Server 11 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: SUSE Linux Enterprise Server 11 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: SUSE Linux Enterprise Server 10 SP2 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Windows Server 2003 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Oracle Enterprise Linux 6 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Ubuntu Precise Pangolin 12.04 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Oracle Enterprise Linux 5 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Windows Server 2012 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Red Hat Enterprise Linux 4.7 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Windows 7 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Oracle Enterprise Linux 5 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Ubuntu Lucid Lynx 10.04 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: CentOS 4.7 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: SUSE Linux Enterprise Server 11 SP1 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Windows 8 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Citrix XenApp on Windows Server 2008 R2 (64-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Windows XP SP3 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Debian Wheezy 7.0 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: SUSE Linux Enterprise Server 10 SP3 (32-bit)(template)  -- expected failure: can't start a template.
+Trying to start: Windows 7 (32-bit)(template)  -- expected failure: can't start a template.
+----------------------------------------------------------------------
+disposing connection for 13.0.40.150

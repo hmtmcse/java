@@ -1,0 +1,43 @@
+{
+  "onBuild":{
+    "scss":{
+      "source":"",
+      "destination":""
+    }
+  },
+
+  "onPopulate":{
+    "softLink":[
+      {
+        "isFile":true,
+        "link":{
+          "sourceDir":"",
+          "source":"",
+          "destination":""
+        },
+        "move":{
+          "source":"",
+          "destination":""
+        },
+        "delete":{
+          "source":"",
+          "destination":""
+        }
+      },
+      {
+        "link":{
+          "source":"",
+          "destination":""
+        },
+        "move":{
+          "source":"",
+          "destination":""
+        },
+        "delete":{
+          "source":"",
+          "destination":""
+        }
+      }
+    ]
+  }
+}

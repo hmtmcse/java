@@ -1,0 +1,44 @@
+[
+  {
+    "action": "/demolt/StoreAuth/SignIn",
+    "method": "POST",
+    "inputs": [
+      {
+        "name": "ReturnUrl",
+        "type": "hidden",
+        "maxLength": "",
+        "placeholder": "",
+        "raw": "<input type=\"hidden\" name=\"ReturnUrl\">"
+      },
+      {
+        "name": "email",
+        "type": "text",
+        "maxLength": "",
+        "placeholder": "someone@example.com",
+        "raw": "<input name=\"email\" type=\"text\" data-validation=\"email required\" placeholder=\"someone@example.com\">"
+      },
+      {
+        "name": "password",
+        "type": "password",
+        "maxLength": "",
+        "placeholder": "********",
+        "raw": "<input name=\"password\" type=\"password\" data-validation=\"required\" placeholder=\"********\">"
+      }
+    ],
+    "selects": []
+  },
+  {
+    "action": "",
+    "method": "post",
+    "inputs": [
+      {
+        "name": "",
+        "type": "text",
+        "maxLength": "",
+        "placeholder": "Enter your Email",
+        "raw": "<input class=\"form-control\" type=\"text\" id=\"\" name=\"\" placeholder=\"Enter your Email\">"
+      }
+    ],
+    "selects": []
+  }
+]

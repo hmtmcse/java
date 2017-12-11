@@ -1,0 +1,37 @@
+{
+  "releaseVersion":"",
+  "fromVersion":"",
+  "developers":[
+    {
+      "name":"Sajed",
+      "sql":[
+        {
+          "for":"Product Creation",
+          "condition":"",
+          "isFalse":"",
+          "isTrue":"",
+          "isNested":[
+            "1",
+            "2"
+          ]
+        }
+      ]
+    },
+
+    {
+      "name":"Shahin",
+      "sql":[
+        {
+          "for":"Product Creation",
+          "condition":"",
+          "isFalse":"",
+          "isTrue":"",
+          "isNested":[
+            "1",
+            "2"
+          ]
+        }
+      ]
+    }
+  ]
+}
