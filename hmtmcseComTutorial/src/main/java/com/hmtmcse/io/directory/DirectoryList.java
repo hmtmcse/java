@@ -39,7 +39,7 @@ public class DirectoryList {
 
     public static void main(String[] args) {
         DirectoryList directoryList = new DirectoryList();
-        List<DirData> list = directoryList.listDirectory("G:\\EA Games\\Need for Speed Most Wanted");
+        List<DirData> list = directoryList.listDirectory("W:\\opensource\\java\\hmtmcseComTutorial\\src\\main\\java\\com\\hmtmcse");
         directoryList.printDirectory(list, "-");
 
     }
