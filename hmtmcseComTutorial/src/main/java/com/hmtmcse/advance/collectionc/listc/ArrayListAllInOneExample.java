@@ -97,12 +97,12 @@ public class ArrayListAllInOneExample {
         System.out.println("-- Print Items After Removed Single item. --");
         System.out.println(sentence);
 
-        sentence.contains()
-        sentence.get()
-        sentence.isEmpty()
-        sentence.size()
-        sentence.sort();
-        sentence.toArray();
+//        sentence.contains()
+//        sentence.get()
+//        sentence.isEmpty()
+//        sentence.size()
+//        sentence.sort();
+//        sentence.toArray();
 
 
 
