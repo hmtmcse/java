@@ -69,7 +69,7 @@ public class AdvanceFileDirectoryList {
                         .setName(file.getName())
                         .setLastModified(file.lastModified())
                         .setAbsolutePath(file.getAbsolutePath());
-                if (file.isDirectory()) {
+                if (file.isDirectory() && !listingInfoData.getFileOnly()) {
                     dirData.setDirectory(true);
                     if (listingInfoData.getRecursive()){
                         listingInfoData.setLocation(file.getAbsolutePath());
@@ -87,6 +87,7 @@ public class AdvanceFileDirectoryList {
         return listDirectory(
                 new ListingInfoData()
                         .setDirectoryOnly(true)
+                        .setFileOnly(false)
                         .setRecursive(false)
                         .setLocation(location)
         );
