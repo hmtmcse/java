@@ -13,7 +13,7 @@ public class JsoupHtml {
         Document doc = null;
         try {
 
-            Document list = Jsoup.connect("http://www.talkenglish.com/speaking/basics/speaking_basics_i.aspx").get();
+            Document list = Jsoup.connect("http://www.talkenglish.com/speaking/basics/speaking_basics_iii.aspx").get();
             Elements baseURLs = list.select(".steps-learn").get(0).select("a");
             baseURLs.remove(0);
             for (Element element1 : baseURLs) {
@@ -25,8 +25,9 @@ public class JsoupHtml {
                 doc = Jsoup.connect(url).get();
                 Elements elements = doc.select(".sm2-playlist-bd span a");
                 for (Element element : elements) {
-                    System.out.println("  * " + element.text());
-                    Thread.sleep(2000);
+                    if (!element.ownText().equals("Listen to the Entire Lesson")){
+                        System.out.println("  * " + element.text());
+                    }
                 }
                 System.out.println("");
                 System.out.println("");
