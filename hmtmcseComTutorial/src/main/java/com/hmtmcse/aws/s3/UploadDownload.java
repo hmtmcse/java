@@ -29,7 +29,6 @@ public class UploadDownload {
 
     public void uploadDirectory(String source, String destination) {
         AmazonS3 amazonS3 = getS3Client();
-
         TransferManager transferManager = TransferManagerBuilder.standard().withS3Client(amazonS3).build();
         try {
             MultipleFileUpload multipleFileUpload = transferManager.uploadDirectory(AwsConstant.BUCKET_NAME, destination, new File(source), true);
@@ -70,7 +69,10 @@ public class UploadDownload {
 
     public static void main(String[] args) {
         UploadDownload upload = new UploadDownload();
-        upload.uploadDirectory("C:\\Users\\touhid\\Desktop\\image", "public");
+//        upload.uploadDirectory("C:\\Users\\touhid\\Desktop\\image", "public");
+
+        ACLManager.printAllPermission("//public*");
+
 //        upload.changeACL("public");
 //        upload.downloadDirectory("touhid","C:\\Users\\touhid\\Desktop\\awsTest");
 //        upload.downloadDirectory(null,"C:\\Users\\touhid\\Desktop\\awsTest");
