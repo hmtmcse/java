@@ -5,6 +5,7 @@ import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
+import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.transfer.MultipleFileDownload;
 import com.amazonaws.services.s3.transfer.TransferManager;
 import com.amazonaws.services.s3.transfer.TransferManagerBuilder;
@@ -51,7 +52,7 @@ public class UploadDownload {
 
 
     public void downloadDirectory(String bucketSource, String destination){
-        TransferManager transferManager = TransferManagerBuilder.standard().withS3Client(getS3Client()).build();
+        TransferManager transferManager = TransferManagerBuilder.standard().withS3Client(AmazonS3ClientBuilder.standard().withRegion(AwsConstant.REGION).build()).build();
         try {
             MultipleFileDownload multipleFileDownload = transferManager.downloadDirectory(AwsConstant.BUCKET_NAME, bucketSource, new File(destination));
             multipleFileDownload.waitForCompletion();
@@ -71,11 +72,26 @@ public class UploadDownload {
         UploadDownload upload = new UploadDownload();
 //        upload.uploadDirectory("C:\\Users\\touhid\\Desktop\\image", "public");
 
-        ACLManager.printAllPermission("//public*");
 
-//        upload.changeACL("public");
+
+//        AmazonS3 s3client = CredentialManager.getS3Client();
+//        s3client.setObjectAcl(AwsConstant.BUCKET_NAME,"public/pv-pakhi.png", CannedAccessControlList.Private);
+//        PutObjectRequest request = new PutObjectRequest(AwsConstant.BUCKET_NAME, "public/pv-pakhi.png", "C:\\Users\\touhid\\Desktop\\image\\pv-pakhi.png");
+//        request.withCannedAcl(CannedAccessControlList.PublicRead);
+//        s3client.putObject(request);
+
+//        s3client.putObject(
+//                AwsConstant.BUCKET_NAME,
+//                "public/pv-pakhi.png",
+//                new File("C:\\Users\\touhid\\Desktop\\image\\pv-pakhi.png")
+//        );
+
+
+//        ACLManager.printAllPermission("//public*");
+
+//        upload.changeACL("public/1.png");
 //        upload.downloadDirectory("touhid","C:\\Users\\touhid\\Desktop\\awsTest");
-//        upload.downloadDirectory(null,"C:\\Users\\touhid\\Desktop\\awsTest");
+        upload.downloadDirectory(null,"C:\\Users\\touhid\\Desktop\\awsTest");
     }
 
 }
