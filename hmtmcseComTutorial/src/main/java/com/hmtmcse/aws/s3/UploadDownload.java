@@ -63,6 +63,8 @@ public class UploadDownload {
         System.out.println("Directory Downloaded");
     }
 
+
+
     public void downloadFile(String bucketSource, String destination){
         TransferManager transferManager = TransferManagerBuilder.standard().withS3Client(getS3Client()).build();
         try {
@@ -79,12 +81,28 @@ public class UploadDownload {
     }
 
 
+    public void copy(){
+        TransferManager transferManager = TransferManagerBuilder.standard().withS3Client(getS3Client()).build();
+        try {
+            Copy copy = transferManager.copy("03528714", "template", "03528714", "miavai");
+            copy.waitForCompletion();
+        } catch (AmazonServiceException e) {
+            System.err.println(e.getErrorMessage());
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        transferManager.shutdownNow();
+        System.out.println("Downloaded");
+    }
+
 
 
     public static void main(String[] args) {
         UploadDownload upload = new UploadDownload();
 //        upload.uploadDirectory("J:\\map_to_drive\\Desktop\\miavai", "miavai");
-        upload.downloadDirectory("miavai","J:\\map_to_drive\\Desktop\\miavai");
+//        upload.downloadDirectory("miavai","J:\\map_to_drive\\Desktop\\miavai");
+        upload.copy();
 //        upload.downloadDirectory("miavai","J:\\map_to_drive\\Desktop\\miavai\\download\\miavai");
 
 
