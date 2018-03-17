@@ -6,12 +6,9 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.PutObjectRequest;
-import com.amazonaws.services.s3.transfer.MultipleFileDownload;
-import com.amazonaws.services.s3.transfer.TransferManager;
-import com.amazonaws.services.s3.transfer.TransferManagerBuilder;
+import com.amazonaws.services.s3.transfer.*;
 import com.amazonaws.AmazonServiceException;
 
-import com.amazonaws.services.s3.transfer.MultipleFileUpload;
 import com.hmtmcse.aws.AwsConstant;
 
 import java.io.File;
@@ -52,17 +49,33 @@ public class UploadDownload {
 
 
     public void downloadDirectory(String bucketSource, String destination){
-        TransferManager transferManager = TransferManagerBuilder.standard().withS3Client(AmazonS3ClientBuilder.standard().withRegion(AwsConstant.REGION).build()).build();
+        TransferManager transferManager = TransferManagerBuilder.standard().withS3Client(getS3Client()).build();
         try {
             MultipleFileDownload multipleFileDownload = transferManager.downloadDirectory(AwsConstant.BUCKET_NAME, bucketSource, new File(destination));
             multipleFileDownload.waitForCompletion();
         } catch (AmazonServiceException e) {
             System.err.println(e.getErrorMessage());
+            e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         transferManager.shutdownNow();
-        System.out.println("done");
+        System.out.println("Directory Downloaded");
+    }
+
+    public void downloadFile(String bucketSource, String destination){
+        TransferManager transferManager = TransferManagerBuilder.standard().withS3Client(getS3Client()).build();
+        try {
+            Download download = transferManager.download(AwsConstant.BUCKET_NAME, bucketSource, new File(destination));
+            download.waitForCompletion();
+        } catch (AmazonServiceException e) {
+            System.err.println(e.getErrorMessage());
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        transferManager.shutdownNow();
+        System.out.println("Downloaded");
     }
 
 
@@ -70,7 +83,9 @@ public class UploadDownload {
 
     public static void main(String[] args) {
         UploadDownload upload = new UploadDownload();
-//        upload.uploadDirectory("C:\\Users\\touhid\\Desktop\\image", "public");
+//        upload.uploadDirectory("J:\\map_to_drive\\Desktop\\miavai", "miavai");
+        upload.downloadDirectory("miavai","J:\\map_to_drive\\Desktop\\miavai");
+//        upload.downloadDirectory("miavai","J:\\map_to_drive\\Desktop\\miavai\\download\\miavai");
 
 
 
@@ -91,7 +106,7 @@ public class UploadDownload {
 
 //        upload.changeACL("public/1.png");
 //        upload.downloadDirectory("touhid","C:\\Users\\touhid\\Desktop\\awsTest");
-        upload.downloadDirectory(null,"C:\\Users\\touhid\\Desktop\\awsTest");
+//        upload.downloadDirectory(null,"C:\\Users\\touhid\\Desktop\\awsTest");
     }
 
 }
