@@ -15,6 +15,7 @@ repositories {
 }
 
 dependencies {
+    compile 'com.google.apis:google-api-services-analytics:v3-rev146-1.23.0'
     compile group: 'org.jsoup', name: 'jsoup', version: '1.11.2'
     compile group: 'com.amazonaws', name: 'aws-java-sdk-s3', version: '1.11.294'
 }
