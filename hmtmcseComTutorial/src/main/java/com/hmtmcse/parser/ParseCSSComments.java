@@ -45,7 +45,7 @@ public class ParseCSSComments {
 
     public static void getData(String text){
         System.out.println("Data");
-        String pattern = "\\w+\\s*: ([\\w\\s\\d]+\\s*)";
+        String pattern = "(\\w+\\s*):([\\w\\s\\d-_.'&]*\\s\n$*)";
         Pattern r = Pattern.compile(pattern);
         Matcher matcher = r.matcher(text);
         while (matcher.find()) {
