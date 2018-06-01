@@ -29,7 +29,8 @@ public class UploadDownload {
 
 
     public void uploadDirectory(String source, String destination) {
-        TransferManager transferManager = TransferManagerBuilder.standard().withS3Client(getS3Client()).build();
+        AmazonS3 amazonS3 = getS3Client();
+        TransferManager transferManager = TransferManagerBuilder.standard().withS3Client(amazonS3).build();
         try {
             MultipleFileUpload multipleFileUpload = transferManager.uploadDirectory(AwsConstant.BUCKET_NAME, destination, new File(source), true);
             multipleFileUpload.waitForCompletion();
@@ -38,7 +39,9 @@ public class UploadDownload {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
         transferManager.shutdownNow();
+
         System.out.println("done");
     }
 
@@ -49,7 +52,7 @@ public class UploadDownload {
 
 
     public void downloadDirectory(String bucketSource, String destination){
-        TransferManager transferManager = TransferManagerBuilder.standard().withS3Client(getS3Client()).build();
+        TransferManager transferManager = TransferManagerBuilder.standard().withS3Client(AmazonS3ClientBuilder.standard().withRegion(AwsConstant.REGION).build()).build();
         try {
             MultipleFileDownload multipleFileDownload = transferManager.downloadDirectory(AwsConstant.BUCKET_NAME, bucketSource, new File(destination));
             multipleFileDownload.waitForCompletion();
@@ -59,7 +62,7 @@ public class UploadDownload {
             e.printStackTrace();
         }
         transferManager.shutdownNow();
-        System.out.println("Download Directory Process Completed");
+        System.out.println("done");
     }
 
 
@@ -67,8 +70,7 @@ public class UploadDownload {
 
     public static void main(String[] args) {
         UploadDownload upload = new UploadDownload();
-        upload.uploadDirectory("C:\\Users\\touhid\\Desktop\\image", "template");
-//        upload.downloadDirectory("resources*","C:\\Users\\touhid\\Desktop\\awsTest");
+//        upload.uploadDirectory("C:\\Users\\touhid\\Desktop\\image", "public");
 
 
 
@@ -88,8 +90,8 @@ public class UploadDownload {
 //        ACLManager.printAllPermission("//public*");
 
 //        upload.changeACL("public/1.png");
-
-//        upload.downloadDirectory(null,"C:\\Users\\touhid\\Desktop\\awsTest");
+//        upload.downloadDirectory("touhid","C:\\Users\\touhid\\Desktop\\awsTest");
+        upload.downloadDirectory(null,"C:\\Users\\touhid\\Desktop\\awsTest");
     }
 
 }
