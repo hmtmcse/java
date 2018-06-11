@@ -19,7 +19,7 @@ public class EmailValidation {
     }
 
     public static void main(String[] args) {
-        System.out.println(validate("touhid@bitmascot.commmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm."));
+        System.out.println(validate("tomcattomcattomcattomcattomcattomcattomcattomcattomcattomcattomcat@c.c"));
     }
 
 }
