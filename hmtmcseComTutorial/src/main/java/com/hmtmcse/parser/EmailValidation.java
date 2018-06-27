@@ -22,4 +22,5 @@ public class EmailValidation {
         System.out.println(validate("tomcattomcattomcattomcattomcattomcattomcattomcattomcattomcattomcat@c.c"));
     }
 
+
 }
