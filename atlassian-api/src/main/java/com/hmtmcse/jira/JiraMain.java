@@ -59,6 +59,7 @@ public class JiraMain {
         for (Issue simpleIssue : myJiraClient.getAllIssuesByProjectKey("DEVOPS").claim().getIssues()) {
             System.out.println("Key: " + simpleIssue.getKey());
             System.out.println("Assignee: " + simpleIssue.getAssignee());
+            System.out.println("Reporter: " + simpleIssue.getReporter());
             System.out.println("TimeTracking: " + simpleIssue.getTimeTracking());
         }
 
