@@ -104,7 +104,7 @@ public class GitFlowMain {
         commit("Master 4", "master");
         push();
 
-        createBranch("developer");
+        checkout("developer");
         rebase("master");
         rebasePull();
         push();
@@ -120,7 +120,7 @@ public class GitFlowMain {
         commit("Dev 4", "dev");
         push();
 
-        createBranch("opt-1");
+        checkout("opt-1");
         rebase("developer");
         rebasePull();
         push();
@@ -137,17 +137,17 @@ public class GitFlowMain {
         commit("Master 6", "master");
         push();
 
-        createBranch("developer");
+        checkout("developer");
         rebase("master");
         rebasePull();
         push();
 
-        createBranch("opt-1");
+        checkout("opt-1");
         rebase("developer");
         rebasePull();
         push();
 
-        createBranch("opt-2");
+        checkout("opt-2");
         rebase("developer");
         rebasePull();
         push();
