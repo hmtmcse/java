@@ -133,6 +133,19 @@ public class GitFlowMain {
         commit("Master 5", "master");
         commit("Master 6", "master");
         push();
+
+        createBranch("developer");
+        rebase("master");
+        push();
+
+        createBranch("opt-1");
+        rebase("developer");
+        push();
+
+        createBranch("opt-2");
+        rebase("developer");
+        push();
+
     }
 
     public static void main(String[] args) {
