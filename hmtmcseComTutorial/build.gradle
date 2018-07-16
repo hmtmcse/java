@@ -20,7 +20,6 @@ dependencies {
     compile group: 'org.jsoup', name: 'jsoup', version: '1.11.2'
     compile group: 'com.amazonaws', name: 'aws-java-sdk-s3', version: '1.11.294'
     compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.9.6'
-    compile group: 'org.apache.spark', name: 'spark-core_2.11', version: '2.3.1'
 
     compile group: 'com.atlassian.jira', name: 'jira-rest-java-client-core', version: '5.0.4'
     compile group: 'com.atlassian.fugue', name: 'fugue', version: '2.6.1'
