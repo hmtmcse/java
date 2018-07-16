@@ -106,6 +106,7 @@ public class GitFlowMain {
 
         createBranch("developer");
         rebase("master");
+        rebasePull();
         push();
 
         createBranch("opt-1");
@@ -120,6 +121,7 @@ public class GitFlowMain {
 
         createBranch("opt-1");
         rebase("developer");
+        rebasePull();
         push();
 
 
@@ -136,14 +138,17 @@ public class GitFlowMain {
 
         createBranch("developer");
         rebase("master");
+        rebasePull();
         push();
 
         createBranch("opt-1");
         rebase("developer");
+        rebasePull();
         push();
 
         createBranch("opt-2");
         rebase("developer");
+        rebasePull();
         push();
 
     }
