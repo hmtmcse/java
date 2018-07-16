@@ -109,6 +109,7 @@ public class GitFlowMain {
         rebasePull();
         push();
 
+        checkout("developer");
         createBranch("opt-1");
         commit("Opt-1 1", "opt-1");
         commit("Opt-1 2", "opt-1");
