@@ -23,4 +23,6 @@ dependencies {
 
     compile group: 'com.atlassian.jira', name: 'jira-rest-java-client-core', version: '5.0.4'
     compile group: 'com.atlassian.fugue', name: 'fugue', version: '2.6.1'
+
+    compile group: 'org.eclipse.jgit', name: 'org.eclipse.jgit', version: '5.0.1.201806211838-r'
 }
