@@ -52,19 +52,35 @@ public class GitFlowMain {
         git("pull");
     }
 
+    public static void deleteFile(String fileName){
+        File file = new File(concatFile(fileName));
+        if (file.exists()){
+            file.delete();
+        }
+
+    }
 
     public static void cleanAndDeleteBranch(){
         cleanHistory();
         deletBranch("developer");
         deletBranch("opt-1");
         deletBranch("opt-2");
+
+        deleteFile("dev");
+        deleteFile("master");
+        deleteFile("opt-1");
+        deleteFile("opt-2");
     }
 
+
+    public static String concatFile(String fileName){
+        return repository + File.separator + fileName + ".md";
+    }
 
 
     public static void commit(String commit, String fileName){
         TextReadWrite textReadWrite = new TextReadWrite();
-        textReadWrite.writeToFile(repository + File.separator + fileName + ".md", commit + "\n", true);
+        textReadWrite.writeToFile(concatFile(fileName), commit + "\n", true);
         git("add --all");
         git("commit -m \"" + commit + "\"");
     }
