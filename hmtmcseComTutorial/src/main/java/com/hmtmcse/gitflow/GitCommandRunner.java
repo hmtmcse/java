@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,6 +32,10 @@ public class GitCommandRunner {
 
     public static void runToShell(String[] commands, String[] environment, File location){
         try {
+            System.out.println("");
+            System.out.println("");
+            System.out.println("Command: " + Arrays.toString(commands));
+            System.out.println("--------------------------------------");
             Process process = Runtime.getRuntime().exec(commands, environment, location);
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             String line;
@@ -38,6 +43,7 @@ public class GitCommandRunner {
                System.out.println(line);
             }
             process.waitFor();
+            System.out.println("--------------------------------------");
         } catch (IOException e) {
            System.out.println("IOException Error from RunToShell: " + e.getMessage());
         } catch (InterruptedException e) {

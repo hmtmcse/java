@@ -28,6 +28,7 @@ public class GitFlowMain {
 
     public static void push(){
         git("push --all");
+        rebasePull();
     }
 
 
@@ -42,6 +43,7 @@ public class GitFlowMain {
 
 
     public static void cleanHistory(){
+        git("checkout master");
         git("checkout --orphan backup_branch");
         git("add -A");
         git("commit -am \"bismillah\"");
@@ -81,13 +83,14 @@ public class GitFlowMain {
     public static void commit(String commit, String fileName){
         TextReadWrite textReadWrite = new TextReadWrite();
         textReadWrite.writeToFile(concatFile(fileName), commit + "\n", true);
-        git("add --all");
-        git("commit -m \"" + commit + "\"");
+        git("add .");
+        git("commit -am \"" + commit + "\"");
     }
 
 
     public static void setup(){
         cleanAndDeleteBranch();
+
 
         checkout("master");
         commit("Master 1", "master");
@@ -104,10 +107,12 @@ public class GitFlowMain {
         commit("Master 4", "master");
         push();
 
+
         checkout("developer");
         rebase("master");
         rebasePull();
         push();
+
 
         checkout("developer");
         createBranch("opt-1");
@@ -156,7 +161,7 @@ public class GitFlowMain {
 
     public static void main(String[] args) {
 
-        setup();
+        cleanAndDeleteBranch();
 
     }
 
