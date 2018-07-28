@@ -7,7 +7,7 @@ import java.io.File;
 public class GitFlowMain {
 
 
-    static String repository = "F:\\touhid\\GitExperiment\\git_experiment";
+    static String repository = "F:\\touhid\\GitExperiment\\git_exp";
 
     public static void git(String command){
         GitCommandRunner.git("git " + command, repository);
