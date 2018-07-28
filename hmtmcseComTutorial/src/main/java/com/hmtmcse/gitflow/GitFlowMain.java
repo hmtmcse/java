@@ -64,7 +64,7 @@ public class GitFlowMain {
 
     public static void cleanAndDeleteBranch(){
         cleanHistory();
-        deletBranch("developer");
+        deletBranch("development");
         deletBranch("opt-1");
         deletBranch("opt-2");
 
