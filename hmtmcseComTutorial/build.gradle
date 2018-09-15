@@ -21,6 +21,7 @@ repositories {
 
 dependencies {
 
+    compile group: 'de.vandermeer', name: 'asciitable', version: '0.3.2'
 
     compile 'com.google.apis:google-api-services-analytics:v3-rev146-1.23.0'
     compile group: 'org.jsoup', name: 'jsoup', version: '1.11.2'
