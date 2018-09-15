@@ -1,4 +1,4 @@
-package com.hmtmcse.color;
+package com.hmtmcse.console;
 
 public enum ColorCodes {
 
