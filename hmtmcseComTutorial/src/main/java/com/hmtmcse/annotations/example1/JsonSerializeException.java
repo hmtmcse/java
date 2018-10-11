@@ -1,4 +1,4 @@
-package com.hmtmcse.annotations;
+package com.hmtmcse.annotations.example1;
 
 public class JsonSerializeException extends Exception {
     private static final long serialVersionUID = -8845242379503538623L;

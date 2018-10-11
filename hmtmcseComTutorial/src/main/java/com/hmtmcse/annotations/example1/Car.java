@@ -1,4 +1,4 @@
-package com.hmtmcse.annotations;
+package com.hmtmcse.annotations.example1;
 
 public class Car {
 

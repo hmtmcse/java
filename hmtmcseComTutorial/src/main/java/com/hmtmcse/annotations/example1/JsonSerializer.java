@@ -1,4 +1,4 @@
-package com.hmtmcse.annotations;
+package com.hmtmcse.annotations.example1;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
