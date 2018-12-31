@@ -21,6 +21,8 @@ repositories {
 
 dependencies {
 
+    compile group: 'commons-cli', name: 'commons-cli', version: '1.4'
+
     compile group: 'de.vandermeer', name: 'asciitable', version: '0.3.2'
 
     compile 'com.google.apis:google-api-services-analytics:v3-rev146-1.23.0'

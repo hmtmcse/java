@@ -17,11 +17,18 @@ public class MyThreads2ndWay {
         thread.start();
         System.out.println("This Main Thread");
 
+
+
         Thread thread2 = new Thread(){
             @Override
             public void run() {
                 for (int i = 0; i < 100; i++){
                     System.out.println("Thread 2 = " + i);
+                    try {
+                        Thread.sleep(10000l);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         };
