@@ -1,4 +1,4 @@
-package com.hmtmcse.cli.menu;
+package com.hmtmcse.console.menu;
 
 import org.apache.commons.cli.*;
 
@@ -8,7 +8,7 @@ public class CLITester2 {
 
         Options options = new Options();
 
-        Option logfile   = Option.builder()
+        Option logfile   = Option.builder("Agol")
                 .longOpt("logFile")
                 .argName("file" )
                 .hasArg()

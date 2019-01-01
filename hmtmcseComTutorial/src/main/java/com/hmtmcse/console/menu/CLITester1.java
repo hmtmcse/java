@@ -1,4 +1,4 @@
-package com.hmtmcse.cli.menu;
+package com.hmtmcse.console.menu;
 
 import org.apache.commons.cli.*;
 

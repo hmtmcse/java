@@ -1,4 +1,4 @@
-package com.hmtmcse.cli;
+package com.hmtmcse.console.menu;
 
 import org.apache.commons.cli.*;
 
@@ -21,21 +21,24 @@ public class CLITester {
                 + "modification of file status information) with "
                 + "-l:show ctime and sort by name otherwise: sort "
                 + "by ctime" );
-        options.addOption( "C", false, "list entries by columns" );
+        options.addOption( "C", true, "list entries by columns" );
 
         HelpFormatter formatter = new HelpFormatter();
-        formatter.printHelp("CLITester", options);
 
-         args = new String[]{ "--block-size=10" };
+        String header = "Do something useful with an input file\n\n";
+        String footer = "\nPlease report issues at http://example.com/issues";
+        formatter.printHelp("CLITester", null, options, null, true);
+
+         args = new String[]{ "touhid -C 10" };
 
         try {
             // parse the command line arguments
             CommandLine line = parser.parse( options, args );
 
             // validate that block-size has been set
-            if( line.hasOption( "block-size" ) ) {
+            if( line.hasOption( "C" ) ) {
                 // print the value of block-size
-                System.out.println( line.getOptionValue( "block-size" ) );
+                System.out.println( line.getOptionValue( "C" ) );
             }
         }
         catch( ParseException exp ) {
